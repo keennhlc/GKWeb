@@ -1,0 +1,22 @@
+{% extends 'GKWeb/base.html' %}
+{% block body %}
+{% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'programs/style.css' %}"/>
+    <title>GK | {{program.program_name}}</title>
+    <div class="info">
+    <img src="{{program.program_image.url}}">
+
+    <h1>{{program.program_name}}</h1>
+    <h3>Details</h3>
+    {% for paragraph in program.programcontent_set.all%}
+        {% if paragraph.content_image %}
+        <img src="{{paragraph.content_image.url}}">
+        {% endif %}
+        <p>
+            {{paragraph.content|escape|linebreaks}}
+        </p>
+
+    {% endfor %}
+    </div>
+    <div  class="inquire_btn"><a href="{% url 'contactUs:contact_create_view' %}"><img src="{% static 'programs/images/inquire_btn.png' %}" alt=""></a> </div>
+{% endblock %}

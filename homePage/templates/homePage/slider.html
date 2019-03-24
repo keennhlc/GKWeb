@@ -1,0 +1,16 @@
+{% extends 'GKWeb/base.html' %}
+{% block body %}
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'homePage/details.css' %}"/>
+
+    <title>GK | {{slider.title}}</title>
+
+    <img src="{{slider.image}}" class="new-image">
+    <div class="new-content">
+        <h1>{{slider.title}}</h1>
+        <p>{{slider.content|escape|linebreaks}}</p>
+    </div>
+    <div class="info">
+        <small><i>{{slider.author}} - {{slider.date}}</i></small>
+    </div>
+{% endblock %}

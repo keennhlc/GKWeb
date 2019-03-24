@@ -1,0 +1,17 @@
+{% extends 'GKWeb/base.html' %}
+{% block body %}
+{% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'campuses/style.css' %}"/>
+	<title>GK | {{campus.name}}</title>
+    <div class="campus_content">
+	    <h1>{{campus.name}}</h1>
+	    <a href="{{campus.url}}" target="_blank"><img src="{{ campus.image.url }}" width="100%"></a>
+	    <div class="campus_info">
+	    	<p>Adress: {{campus.address}}</p>
+	    	<p>Contact Number: {{campus.contact_info}}</p>
+	    	<p class="email">Email: {{campus.email}}
+	    </div>
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'GKWeb/base.html' %}
+{% block body %}
+{% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'campuses/style.css' %"/>
+    {% for campus_data in all_campus %}
+     <li><a href="{% url 'campuses:detail' campus_data.id%}">{{campus_data.name}}</a></li>
+    {% endfor %}
+
+
+{% endblock %}

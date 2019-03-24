@@ -1,0 +1,11 @@
+{% extends 'GKWeb/base.html' %}
+{% block body %}
+{% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'about/style.css' %"/>
+    <title>GK | About</title>
+    {% for data in all_data %}
+    <img src="{{ data.image.url }}" width="100%">
+    {% endfor %}
+
+
+{% endblock %}

@@ -1,0 +1,23 @@
+ .new-image{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 50px;
+  max-width: 900px;
+}
+
+.new-content{
+	font-family: sans-serif, helvetica, arial;
+	margin: 96px;
+    margin-bottom: 15px;
+}
+.info{
+	text-align: right;
+	margin-right: 45px;
+	padding-bottom: 20px;
+
+}
+
+.new-content h1{
+	margin-bottom: 15px;
+}

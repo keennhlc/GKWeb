@@ -1,0 +1,15 @@
+{% extends 'GKWeb/base.html' %}
+{% block body %}
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'programs/style.css' %}"/>
+	<title>GK | Programs</title>
+    <br>
+    <div class="programs">
+	    <h1>Programs:</h1>
+	    <ul class="list">
+	        {% for program in all_programs %}
+	        <li><a href="{% url 'programs:detail' program.id%}">{{program.program_name}}</a></li>
+	        {% endfor %}
+	    </ul>
+    </div>
+{% endblock %}

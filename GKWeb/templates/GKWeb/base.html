@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'base/style.css' %}"/>﻿
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="banner"><img src="{% static 'base/images/Banner.jpg' %}" alt=""></div>
+	<div class="menu">
+		<a href="#" class="brand"><img src="{% static 'base/images/GOLO.png' %}" alt=""></a>
+		<nav id="nav">
+			<ul>
+				<li><a href="{% url 'homePage:index' %}">Home</a></li>
+				<li><a>Programs</a>
+					<ul>
+						{% for program in pn %}
+						<li><a href="{% url 'programs:detail' program.id%}">{{program.program_name}}</a></li>
+						{% endfor %}
+					</ul>
+				</li>
+				
+				<li><a>Campuses</a>
+					<ul>
+						{% for campusN in cn %}
+						<li><a href="{% url 'campuses:detail' campusN.id%}">{{campusN.name}}</a></li>
+						{% endfor %}
+					</ul>
+				</li>
+				<li><a href="{% url 'about:index' %}">About</a></li>
+				<li><a href="{% url 'contactUs:contact_create_view' %}">Contact Us</a></li>
+			</ul>
+		</nav>
+	</div>
+	<section>
+		{% block body %}
+		{% endblock %}
+	</section>
+	<footer><img src="{% static 'base/images/footer.jpg' %}"></footer>
+</body>
+</html>

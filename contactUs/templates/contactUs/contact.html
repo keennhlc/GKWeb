@@ -1,0 +1,24 @@
+{% extends 'GKWeb/base.html' %}
+
+{% block body %}
+{% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'contactUs/style.css' %}"/>
+    <title>GK | ContactUs</title>
+{% if messages %}
+
+<ul class="messages">
+    {% for message in messages %}
+    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+<div class="inquire">
+	<form method="POST" class="inq_forms"> {% csrf_token %}
+		<h3>Inquire</h3>
+		<table>
+	    	{{form.as_table}}
+		</table>
+	    <input type="submit" value="Save"/>
+	</form>
+</div>
+{% endblock %}

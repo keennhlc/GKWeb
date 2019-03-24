@@ -1,0 +1,84 @@
+{% extends 'GKWeb/base.html' %}
+{% block body %}
+	{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'homePage/style.css' %}"/>
+	<title>GK | Home</title>
+
+	<div id="myslider" class="carousel slide" data-ride="carousel">
+			<ol class="carousel-indicators">
+				{% for slider2 in all_slider %}
+				{% if 10 == forloop.counter0 %}
+				<li data-target="#myslider" data-slide-to"{{forloop.counter0}}" class="active"></li>
+				{% endif %}
+				<li data-target="#myslider" data-slide-to"{{forloop.counter0}}"></li>
+				{% endfor %}
+			</ol>
+			<div class="carousel-inner">
+
+				{% for slider2 in all_slider %}
+				{% if 1 == forloop.counter %}
+				<div class="item active">
+                    <a><img src="{{slider2.image_thumbnail.url}}" width="100%"></a>
+				</div>
+				{% else %}
+				<div class="item">
+                    <a><img src="{{slider2.image_thumbnail.url}}" width="100%"></a>
+				</div>
+				{% endif %}
+				{% endfor %}
+			</div>
+		<a class="carousel-control left" href="#myslider" data-slide="prev">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+		</a>
+		<a class="carousel-control right" href="#myslider" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right"></span>
+		</a>
+	</div>
+
+		<br>
+		<h2>News</h2>
+		<div class="news-sec">
+		{% for news in all_news %}
+			{% if 1 == forloop.counter %}
+			{% else %}
+				<div class="card">
+				  <img src="{{news.image_thumbnail.url}}" alt="Avatar" style="width:100%">
+				  <div class="container">
+					<h4><b>{{news.title}}</b></h4>
+					<p>{{news.content|truncatewords:2}}<a href="{% url 'homePage:news_detail' news.id%}"> learn more..</a></p>
+				  </div>
+				</div>
+			{% endif %}
+			{% endfor %}
+		</div>
+		<div class="card-main">
+			{% for news in all_news %}
+			{% if 1 == forloop.counter %}
+			<img src="{{news.image_thumbnail.url}}" alt="Avatar">
+			<div class="container">
+				<h4><b>{{news.title}}</b></h4>
+				<p>{{news.content|truncatewords:90}}<a href="{% url 'homePage:news_detail' news.id%}"> learn more..</a></p>
+			</div>
+			{% else %}
+			{% endif %}
+			{% endfor %}
+		</div><p class="clear">-----</p>
+
+
+	<!-- <ul>
+
+			<ul>
+				{% for slider in all_slider %}
+				<li><a href="{% url 'homePage:slider_detail' slider.id%}">{{slider.title}}</a></li>
+				{% endfor %}
+			</ul>
+		<br>
+				<ul>
+				{% for new in all_news %}
+				<li><a href="{% url 'homePage:news_detail' new.id%}">{{new.title}}</a></li>
+				{% endfor %}
+			</ul>
+
+	</ul> -->
+
+{% endblock %}

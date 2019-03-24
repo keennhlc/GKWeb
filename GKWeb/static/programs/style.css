@@ -1,0 +1,34 @@
+.programs h1{
+	margin:20px;
+	padding:20px;
+	font-size: 40px;
+}
+.list{
+padding-bottom:40px;
+}
+.info{
+	margin:20px;
+	padding-bottom: 40px;
+}
+.info img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 50px;
+  max-width: 900px;
+}
+
+.inquire_btn{
+		padding-bottom: 50px;
+}
+.inquire_btn img{
+	display: block;
+	margin-left: auto;
+	margin-right:auto;
+	margin-top: 30px;
+	width:300px;
+}
+
+.inquire_btn:hover img {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+}

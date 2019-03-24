@@ -1,0 +1,56 @@
+.carousel-inner .item img{
+	height:480px !important;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+  transition: 0.3s;
+  width: 300px;
+  margin:10px;
+
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+}
+
+.container {
+  padding: 2px 16px;
+}
+.news-sec{
+	overflow-y:auto;
+	overflow-x:hidden;
+	width:28%;
+	height:500px;
+	float:right;
+}
+
+.card-main{
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+  	transition: 0.3s;
+  	width:70%;
+  	height:500px;
+ 	margin:10px;
+ 	float:left;
+
+}
+.card-main img{
+	height:300px;
+	margin-top:30px;
+	margin-left:auto;
+	margin-right:auto;
+	display:block;
+}
+.card-main .container{
+	width:100%;
+	margin:0;
+}
+
+.card-main:hover{
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+}
+h2{
+margin-left:25px;
+}
+.clear{
+    visibility:hidden;
+}
